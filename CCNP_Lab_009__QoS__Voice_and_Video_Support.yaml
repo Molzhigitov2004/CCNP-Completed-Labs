@@ -1,0 +1,708 @@
+annotations: []
+smart_annotations: []
+nodes:
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: |-
+          Building configuration...
+
+          Current configuration : 1907 bytes
+          !
+          ! Last configuration change at 09:51:39 UTC Fri Sep 4 2026
+          !
+          version 17.18
+          service timestamps debug datetime msec
+          service timestamps log datetime msec
+          !
+          hostname DLS1
+          !
+          boot-start-marker
+          boot-end-marker
+          !
+          !
+          no logging console
+          no aaa new-model
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          ip dhcp excluded-address 100.1.1.1 100.1.1.5
+          ip dhcp excluded-address 101.1.1.1 101.1.1.5
+          !
+          ip dhcp pool DATA
+           network 100.1.1.0 255.255.255.0
+           default-router 100.1.1.1
+           domain-name shit.com
+           dns-server 172.16.1.253 172.16.1.254
+           lease 5
+          !
+          ip dhcp pool VOICE
+           network 101.1.1.0 255.255.255.0
+           default-router 101.1.1.1
+           option 150 ip 192.168.0.254
+           domain-name shit.com
+           dns-server 172.16.1.254 172.16.1.253
+           lease 5
+          !
+          !
+          !
+          ip audit notify log
+          ip audit po max-events 100
+          ip cef
+          login on-success log
+          no ipv6 cef
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          memory free low-watermark processor 79236
+          !
+          !
+          spanning-tree mode rapid-pvst
+          spanning-tree extend system-id
+          !
+          !
+          vlan internal allocation policy ascending
+          !
+          !
+          policy-map INBOUND
+           class class-default
+          !
+          !
+          !
+          !
+          !
+          interface Port-channel1
+           no switchport
+           ip address 192.168.0.1 255.255.255.252
+           ip ospf 1 area 0
+          !
+          interface Ethernet0/0
+           switchport trunk encapsulation dot1q
+           switchport trunk native vlan 666
+           switchport trunk allowed vlan 100,101
+           switchport mode trunk
+          !
+          interface Ethernet0/1
+           no switchport
+           no ip address
+           channel-group 1 mode desirable
+          !
+          interface Ethernet0/2
+           no switchport
+           no ip address
+           channel-group 1 mode desirable
+          !
+          interface Ethernet0/3
+          !
+          interface Vlan100
+           ip address 100.1.1.1 255.255.255.0
+           ip ospf 1 area 0
+          !
+          interface Vlan101
+           ip address 101.1.1.1 255.255.255.0
+           ip ospf 1 area 0
+          !
+          router ospf 1
+           router-id 1.1.1.1
+          !
+          ip forward-protocol nd
+          !
+          !
+          ip http server
+          ip http secure-server
+          ip ssh bulk-mode 131072
+          !
+          no logging btrace
+          !
+          !
+          !
+          control-plane
+          !
+          !
+          !
+          line con 0
+           exec-timeout 0 0
+           logging synchronous
+          line aux 0
+          line vty 0 4
+           exec-timeout 0 0
+           login
+           transport input ssh
+          !
+          !
+          end
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n0
+    image_definition: null
+    label: DLS1
+    node_definition: ioll2-xe
+    parameters: {}
+    priority: null
+    pyats:
+      username: null
+      password: null
+      enable_password: null
+    ram: null
+    tags: []
+    x: -80
+    y: 40
+    interfaces:
+      - id: i0
+        label: Loopback0
+        mac_address: null
+        type: loopback
+      - id: i1
+        label: Ethernet0/0
+        mac_address: null
+        type: physical
+        slot: 0
+      - id: i2
+        label: Ethernet0/1
+        mac_address: null
+        type: physical
+        slot: 1
+      - id: i3
+        label: Ethernet0/2
+        mac_address: null
+        type: physical
+        slot: 2
+      - id: i4
+        label: Ethernet0/3
+        mac_address: null
+        type: physical
+        slot: 3
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: |-
+          Building configuration...
+
+          Current configuration : 1574 bytes
+          !
+          ! Last configuration change at 09:51:39 UTC Fri Sep 4 2026
+          !
+          version 17.18
+          service timestamps debug datetime msec
+          service timestamps log datetime msec
+          !
+          hostname DLS2
+          !
+          boot-start-marker
+          boot-end-marker
+          !
+          !
+          no logging console
+          no aaa new-model
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          ip audit notify log
+          ip audit po max-events 100
+          ip cef
+          login on-success log
+          no ipv6 cef
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          memory free low-watermark processor 79236
+          !
+          !
+          spanning-tree mode rapid-pvst
+          spanning-tree extend system-id
+          !
+          !
+          vlan internal allocation policy ascending
+          !
+          !
+          !
+          !
+          !
+          interface Port-channel1
+           no switchport
+           ip address 192.168.0.2 255.255.255.252
+           ip ospf 1 area 0
+          !
+          interface Ethernet0/0
+           switchport trunk encapsulation dot1q
+           switchport trunk native vlan 666
+           switchport trunk allowed vlan 200,201
+           switchport mode trunk
+          !
+          interface Ethernet0/1
+           no switchport
+           no ip address
+           channel-group 1 mode desirable
+          !
+          interface Ethernet0/2
+           no switchport
+           no ip address
+           channel-group 1 mode desirable
+          !
+          interface Ethernet0/3
+          !
+          interface Vlan200
+           ip address 200.1.1.1 255.255.255.0
+           ip helper-address 192.168.1.254
+           ip helper-address 192.168.2.254
+           ip ospf 1 area 0
+          !
+          interface Vlan201
+           ip address 201.1.1.1 255.255.255.0
+           ip helper-address 192.168.1.254
+           ip helper-address 192.168.2.254
+           ip ospf 1 area 0
+          !
+          router ospf 1
+           router-id 2.2.2.2
+          !
+          ip forward-protocol nd
+          !
+          !
+          ip http server
+          ip http secure-server
+          ip ssh bulk-mode 131072
+          !
+          no logging btrace
+          !
+          !
+          !
+          control-plane
+          !
+          !
+          !
+          line con 0
+           exec-timeout 0 0
+           logging synchronous
+          line aux 0
+          line vty 0 4
+           exec-timeout 0 0
+           login
+           transport input ssh
+          !
+          !
+          end
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n1
+    image_definition: null
+    label: DLS2
+    node_definition: ioll2-xe
+    parameters: {}
+    priority: null
+    pyats:
+      username: null
+      password: null
+      enable_password: null
+    ram: null
+    tags: []
+    x: 160
+    y: 40
+    interfaces:
+      - id: i0
+        label: Loopback0
+        mac_address: null
+        type: loopback
+      - id: i1
+        label: Ethernet0/0
+        mac_address: null
+        type: physical
+        slot: 0
+      - id: i2
+        label: Ethernet0/1
+        mac_address: null
+        type: physical
+        slot: 1
+      - id: i3
+        label: Ethernet0/2
+        mac_address: null
+        type: physical
+        slot: 2
+      - id: i4
+        label: Ethernet0/3
+        mac_address: null
+        type: physical
+        slot: 3
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: |-
+          Building configuration...
+
+          Current configuration : 1273 bytes
+          !
+          ! Last configuration change at 09:51:39 UTC Fri Sep 4 2026
+          !
+          version 17.18
+          service timestamps debug datetime msec
+          service timestamps log datetime msec
+          !
+          hostname ALS2
+          !
+          boot-start-marker
+          boot-end-marker
+          !
+          !
+          no logging console
+          no aaa new-model
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          ip audit notify log
+          ip audit po max-events 100
+          ip cef
+          login on-success log
+          no ipv6 cef
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          memory free low-watermark processor 79236
+          !
+          !
+          spanning-tree mode rapid-pvst
+          spanning-tree extend system-id
+          !
+          !
+          vlan internal allocation policy ascending
+          !
+          !
+          !
+          !
+          !
+          interface Ethernet0/0
+           switchport trunk encapsulation dot1q
+           switchport trunk native vlan 666
+           switchport trunk allowed vlan 200,201
+           switchport mode trunk
+          !
+          interface Ethernet0/1
+           switchport access vlan 200
+           switchport mode access
+           switchport voice vlan 201
+          !
+          interface Ethernet0/2
+           switchport access vlan 200
+           switchport mode access
+           switchport voice vlan 201
+          !
+          interface Ethernet0/3
+           switchport access vlan 200
+           switchport mode access
+           switchport voice vlan 201
+          !
+          ip forward-protocol nd
+          !
+          !
+          ip http server
+          ip http secure-server
+          ip ssh bulk-mode 131072
+          !
+          no logging btrace
+          !
+          !
+          !
+          control-plane
+          !
+          !
+          !
+          line con 0
+           exec-timeout 0 0
+           logging synchronous
+          line aux 0
+          line vty 0 4
+           exec-timeout 0 0
+           login
+           transport input ssh
+          !
+          !
+          end
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n2
+    image_definition: null
+    label: ALS2
+    node_definition: ioll2-xe
+    parameters: {}
+    priority: null
+    pyats:
+      username: null
+      password: null
+      enable_password: null
+    ram: null
+    tags: []
+    x: 160
+    y: 280
+    interfaces:
+      - id: i0
+        label: Loopback0
+        mac_address: null
+        type: loopback
+      - id: i1
+        label: Ethernet0/0
+        mac_address: null
+        type: physical
+        slot: 0
+      - id: i2
+        label: Ethernet0/1
+        mac_address: null
+        type: physical
+        slot: 1
+      - id: i3
+        label: Ethernet0/2
+        mac_address: null
+        type: physical
+        slot: 2
+      - id: i4
+        label: Ethernet0/3
+        mac_address: null
+        type: physical
+        slot: 3
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: |-
+          Building configuration...
+
+          Current configuration : 1273 bytes
+          !
+          ! Last configuration change at 09:51:38 UTC Fri Sep 4 2026
+          !
+          version 17.18
+          service timestamps debug datetime msec
+          service timestamps log datetime msec
+          !
+          hostname ALS1
+          !
+          boot-start-marker
+          boot-end-marker
+          !
+          !
+          no logging console
+          no aaa new-model
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          ip audit notify log
+          ip audit po max-events 100
+          ip cef
+          login on-success log
+          no ipv6 cef
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          memory free low-watermark processor 79236
+          !
+          !
+          spanning-tree mode rapid-pvst
+          spanning-tree extend system-id
+          !
+          !
+          vlan internal allocation policy ascending
+          !
+          !
+          !
+          !
+          !
+          interface Ethernet0/0
+           switchport trunk encapsulation dot1q
+           switchport trunk native vlan 666
+           switchport trunk allowed vlan 100,101
+           switchport mode trunk
+          !
+          interface Ethernet0/1
+           switchport access vlan 100
+           switchport mode access
+           switchport voice vlan 101
+          !
+          interface Ethernet0/2
+           switchport access vlan 100
+           switchport mode access
+           switchport voice vlan 101
+          !
+          interface Ethernet0/3
+           switchport access vlan 100
+           switchport mode access
+           switchport voice vlan 101
+          !
+          ip forward-protocol nd
+          !
+          !
+          ip http server
+          ip http secure-server
+          ip ssh bulk-mode 131072
+          !
+          no logging btrace
+          !
+          !
+          !
+          control-plane
+          !
+          !
+          !
+          line con 0
+           exec-timeout 0 0
+           logging synchronous
+          line aux 0
+          line vty 0 4
+           exec-timeout 0 0
+           login
+           transport input ssh
+          !
+          !
+          end
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n3
+    image_definition: null
+    label: ALS1
+    node_definition: ioll2-xe
+    parameters: {}
+    priority: null
+    pyats:
+      username: null
+      password: null
+      enable_password: null
+    ram: null
+    tags: []
+    x: -80
+    y: 280
+    interfaces:
+      - id: i0
+        label: Loopback0
+        mac_address: null
+        type: loopback
+      - id: i1
+        label: Ethernet0/0
+        mac_address: null
+        type: physical
+        slot: 0
+      - id: i2
+        label: Ethernet0/1
+        mac_address: null
+        type: physical
+        slot: 1
+      - id: i3
+        label: Ethernet0/2
+        mac_address: null
+        type: physical
+        slot: 2
+      - id: i4
+        label: Ethernet0/3
+        mac_address: null
+        type: physical
+        slot: 3
+links:
+  - id: l0
+    n1: n3
+    n2: n0
+    i1: i1
+    i2: i1
+    conditioning: {}
+    label: ALS1-Ethernet0/0<->DLS1-Ethernet0/0
+  - id: l1
+    n1: n2
+    n2: n1
+    i1: i1
+    i2: i1
+    conditioning: {}
+    label: ALS2-Ethernet0/0<->DLS2-Ethernet0/0
+  - id: l2
+    n1: n0
+    n2: n1
+    i1: i2
+    i2: i2
+    conditioning: {}
+    label: DLS1-Ethernet0/1<->DLS2-Ethernet0/1
+  - id: l3
+    n1: n0
+    n2: n1
+    i1: i3
+    i2: i3
+    conditioning: {}
+    label: DLS1-Ethernet0/2<->DLS2-Ethernet0/2
+lab:
+  description: ''
+  notes: ''
+  title: 'CCNP Lab 009: QoS, Voice and Video Support'
+  node_staging:
+    enabled: false
+    start_remaining: true
+    abort_on_failure: false
+  version: 0.3.1

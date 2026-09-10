@@ -1,0 +1,1068 @@
+annotations: []
+smart_annotations: []
+nodes:
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: |-
+          Building configuration...
+
+          Current configuration : 3235 bytes
+          !
+          ! Last configuration change at 18:31:21 UTC Wed Sep 2 2026
+          !
+          version 15.9
+          service timestamps debug datetime msec
+          service timestamps log datetime msec
+          no service password-encryption
+          !
+          hostname R1
+          !
+          boot-start-marker
+          boot-end-marker
+          !
+          !
+          no logging console
+          !
+          no aaa new-model
+          !
+          !
+          !
+          mmi polling-interval 60
+          no mmi auto-configure
+          no mmi pvc
+          mmi snmp-timeout 180
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          ip cef
+          no ipv6 cef
+          !
+          multilink bundle-name authenticated
+          !
+          !
+          !
+          !
+          !
+          redundancy
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          interface Loopback0
+           ip address 10.1.0.1 255.255.255.0
+           ip ospf 1 area 0
+          !
+          interface Loopback1
+           ip address 10.1.1.1 255.255.255.0
+           ip ospf 1 area 0
+          !
+          interface GigabitEthernet0/0
+           ip address 192.168.12.1 255.255.255.0
+           ip ospf 1 area 0
+           duplex auto
+           speed auto
+           media-type rj45
+          !
+          interface GigabitEthernet0/1
+           no ip address
+           shutdown
+           duplex auto
+           speed auto
+           media-type rj45
+          !
+          interface GigabitEthernet0/2
+           no ip address
+           shutdown
+           duplex auto
+           speed auto
+           media-type rj45
+          !
+          interface GigabitEthernet0/3
+           no ip address
+           shutdown
+           duplex auto
+           speed auto
+           media-type rj45
+          !
+          router ospf 1
+           router-id 1.1.1.1
+           auto-cost reference-bandwidth 1000000
+          !
+          ip forward-protocol nd
+          !
+          !
+          no ip http server
+          no ip http secure-server
+          !
+          ipv6 ioam timestamp
+          !
+          !
+          !
+          control-plane
+          !
+          banner exec ^C
+          **************************************************************************
+          * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+          * education. IOSv is provided as-is and is not supported by Cisco's      *
+          * Technical Advisory Center. Any use or disclosure, in whole or in part, *
+          * of the IOSv Software or Documentation to any third party for any       *
+          * purposes is expressly prohibited except as otherwise authorized by     *
+          * Cisco in writing.                                                      *
+          **************************************************************************^C
+          banner incoming ^C
+          **************************************************************************
+          * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+          * education. IOSv is provided as-is and is not supported by Cisco's      *
+          * Technical Advisory Center. Any use or disclosure, in whole or in part, *
+          * of the IOSv Software or Documentation to any third party for any       *
+          * purposes is expressly prohibited except as otherwise authorized by     *
+          * Cisco in writing.                                                      *
+          **************************************************************************^C
+          banner login ^C
+          **************************************************************************
+          * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+          * education. IOSv is provided as-is and is not supported by Cisco's      *
+          * Technical Advisory Center. Any use or disclosure, in whole or in part, *
+          * of the IOSv Software or Documentation to any third party for any       *
+          * purposes is expressly prohibited except as otherwise authorized by     *
+          * Cisco in writing.                                                      *
+          **************************************************************************^C
+          !
+          line con 0
+           exec-timeout 0 0
+          line aux 0
+          line vty 0 4
+           exec-timeout 0 0
+           login
+           transport input none
+          !
+          no scheduler allocate
+          !
+          end
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n0
+    image_definition: null
+    label: R1
+    node_definition: iosv
+    parameters: {}
+    priority: null
+    pyats:
+      username: null
+      password: null
+      enable_password: null
+    ram: null
+    tags: []
+    x: -560
+    y: 40
+    interfaces:
+      - id: i0
+        label: Loopback0
+        mac_address: null
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        mac_address: null
+        type: physical
+        slot: 0
+      - id: i2
+        label: GigabitEthernet0/1
+        mac_address: null
+        type: physical
+        slot: 1
+      - id: i3
+        label: GigabitEthernet0/2
+        mac_address: null
+        type: physical
+        slot: 2
+      - id: i4
+        label: GigabitEthernet0/3
+        mac_address: null
+        type: physical
+        slot: 3
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: |-
+          Building configuration...
+
+          Current configuration : 3506 bytes
+          !
+          ! Last configuration change at 18:31:19 UTC Wed Sep 2 2026
+          !
+          version 15.9
+          service timestamps debug datetime msec
+          service timestamps log datetime msec
+          no service password-encryption
+          !
+          hostname R2
+          !
+          boot-start-marker
+          boot-end-marker
+          !
+          !
+          no logging console
+          !
+          no aaa new-model
+          !
+          !
+          !
+          mmi polling-interval 60
+          no mmi auto-configure
+          no mmi pvc
+          mmi snmp-timeout 180
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          ip cef
+          no ipv6 cef
+          !
+          multilink bundle-name authenticated
+          !
+          !
+          !
+          !
+          !
+          redundancy
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          interface GigabitEthernet0/0
+           ip address 192.168.12.2 255.255.255.0
+           ip policy route-map PBR_SPLIT
+           ip ospf 1 area 0
+           duplex auto
+           speed auto
+           media-type rj45
+          !
+          interface GigabitEthernet0/1
+           ip address 192.168.23.2 255.255.255.0
+           ip ospf 1 area 0
+           duplex auto
+           speed auto
+           media-type rj45
+          !
+          interface GigabitEthernet0/2
+           ip address 172.16.22.2 255.255.255.0
+           ip ospf 1 area 0
+           duplex auto
+           speed auto
+           media-type rj45
+          !
+          interface GigabitEthernet0/3
+           no ip address
+           shutdown
+           duplex auto
+           speed auto
+           media-type rj45
+          !
+          router ospf 1
+           router-id 2.2.2.2
+           auto-cost reference-bandwidth 1000000
+          !
+          ip forward-protocol nd
+          !
+          !
+          no ip http server
+          no ip http secure-server
+          !
+          ip access-list standard PBR_10.1.0.0/24
+           permit 10.1.0.0 0.0.0.255
+          ip access-list standard PBR_10.1.1.0/24
+           permit 10.1.1.0 0.0.0.255
+          !
+          ipv6 ioam timestamp
+          !
+          route-map PBR_SPLIT permit 10
+           match ip address PBR_10.1.0.0/24
+           set ip next-hop 172.16.22.1
+          !
+          route-map PBR_SPLIT permit 20
+           match ip address PBR_10.1.1.0/24
+           set ip next-hop 192.168.23.3
+          !
+          !
+          !
+          control-plane
+          !
+          banner exec ^C
+          **************************************************************************
+          * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+          * education. IOSv is provided as-is and is not supported by Cisco's      *
+          * Technical Advisory Center. Any use or disclosure, in whole or in part, *
+          * of the IOSv Software or Documentation to any third party for any       *
+          * purposes is expressly prohibited except as otherwise authorized by     *
+          * Cisco in writing.                                                      *
+          **************************************************************************^C
+          banner incoming ^C
+          **************************************************************************
+          * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+          * education. IOSv is provided as-is and is not supported by Cisco's      *
+          * Technical Advisory Center. Any use or disclosure, in whole or in part, *
+          * of the IOSv Software or Documentation to any third party for any       *
+          * purposes is expressly prohibited except as otherwise authorized by     *
+          * Cisco in writing.                                                      *
+          **************************************************************************^C
+          banner login ^C
+          **************************************************************************
+          * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+          * education. IOSv is provided as-is and is not supported by Cisco's      *
+          * Technical Advisory Center. Any use or disclosure, in whole or in part, *
+          * of the IOSv Software or Documentation to any third party for any       *
+          * purposes is expressly prohibited except as otherwise authorized by     *
+          * Cisco in writing.                                                      *
+          **************************************************************************^C
+          !
+          line con 0
+           exec-timeout 0 0
+          line aux 0
+          line vty 0 4
+           exec-timeout 0 0
+           login
+           transport input none
+          !
+          no scheduler allocate
+          !
+          end
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n1
+    image_definition: null
+    label: R2
+    node_definition: iosv
+    parameters: {}
+    priority: null
+    pyats:
+      username: null
+      password: null
+      enable_password: null
+    ram: null
+    tags: []
+    x: -240
+    y: 40
+    interfaces:
+      - id: i0
+        label: Loopback0
+        mac_address: null
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        mac_address: null
+        type: physical
+        slot: 0
+      - id: i2
+        label: GigabitEthernet0/1
+        mac_address: null
+        type: physical
+        slot: 1
+      - id: i3
+        label: GigabitEthernet0/2
+        mac_address: null
+        type: physical
+        slot: 2
+      - id: i4
+        label: GigabitEthernet0/3
+        mac_address: null
+        type: physical
+        slot: 3
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: |-
+          Building configuration...
+
+          Current configuration : 3115 bytes
+          !
+          ! Last configuration change at 18:31:20 UTC Wed Sep 2 2026
+          !
+          version 15.9
+          service timestamps debug datetime msec
+          service timestamps log datetime msec
+          no service password-encryption
+          !
+          hostname FW
+          !
+          boot-start-marker
+          boot-end-marker
+          !
+          !
+          no logging console
+          !
+          no aaa new-model
+          !
+          !
+          !
+          mmi polling-interval 60
+          no mmi auto-configure
+          no mmi pvc
+          mmi snmp-timeout 180
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          ip cef
+          no ipv6 cef
+          !
+          multilink bundle-name authenticated
+          !
+          !
+          !
+          !
+          !
+          redundancy
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          interface GigabitEthernet0/0
+           no ip address
+           shutdown
+           duplex auto
+           speed auto
+           media-type rj45
+          !
+          interface GigabitEthernet0/1
+           no ip address
+           shutdown
+           duplex auto
+           speed auto
+           media-type rj45
+          !
+          interface GigabitEthernet0/2
+           ip address 172.16.22.1 255.255.255.0
+           ip ospf 1 area 0
+           duplex auto
+           speed auto
+           media-type rj45
+          !
+          interface GigabitEthernet0/3
+           ip address 172.16.33.1 255.255.255.0
+           ip ospf 1 area 0
+           duplex auto
+           speed auto
+           media-type rj45
+          !
+          router ospf 1
+           router-id 5.5.5.5
+           auto-cost reference-bandwidth 1000000
+          !
+          ip forward-protocol nd
+          !
+          !
+          no ip http server
+          no ip http secure-server
+          !
+          ipv6 ioam timestamp
+          !
+          !
+          !
+          control-plane
+          !
+          banner exec ^C
+          **************************************************************************
+          * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+          * education. IOSv is provided as-is and is not supported by Cisco's      *
+          * Technical Advisory Center. Any use or disclosure, in whole or in part, *
+          * of the IOSv Software or Documentation to any third party for any       *
+          * purposes is expressly prohibited except as otherwise authorized by     *
+          * Cisco in writing.                                                      *
+          **************************************************************************^C
+          banner incoming ^C
+          **************************************************************************
+          * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+          * education. IOSv is provided as-is and is not supported by Cisco's      *
+          * Technical Advisory Center. Any use or disclosure, in whole or in part, *
+          * of the IOSv Software or Documentation to any third party for any       *
+          * purposes is expressly prohibited except as otherwise authorized by     *
+          * Cisco in writing.                                                      *
+          **************************************************************************^C
+          banner login ^C
+          **************************************************************************
+          * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+          * education. IOSv is provided as-is and is not supported by Cisco's      *
+          * Technical Advisory Center. Any use or disclosure, in whole or in part, *
+          * of the IOSv Software or Documentation to any third party for any       *
+          * purposes is expressly prohibited except as otherwise authorized by     *
+          * Cisco in writing.                                                      *
+          **************************************************************************^C
+          !
+          line con 0
+           exec-timeout 0 0
+          line aux 0
+          line vty 0 4
+           exec-timeout 0 0
+           login
+           transport input none
+          !
+          no scheduler allocate
+          !
+          end
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n2
+    image_definition: null
+    label: FW
+    node_definition: iosv
+    parameters: {}
+    priority: null
+    pyats:
+      username: null
+      password: null
+      enable_password: null
+    ram: null
+    tags: []
+    x: -80
+    y: -160
+    interfaces:
+      - id: i0
+        label: Loopback0
+        mac_address: null
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        mac_address: null
+        type: physical
+        slot: 0
+      - id: i2
+        label: GigabitEthernet0/1
+        mac_address: null
+        type: physical
+        slot: 1
+      - id: i3
+        label: GigabitEthernet0/2
+        mac_address: null
+        type: physical
+        slot: 2
+      - id: i4
+        label: GigabitEthernet0/3
+        mac_address: null
+        type: physical
+        slot: 3
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: |-
+          Building configuration...
+
+          Current configuration : 3569 bytes
+          !
+          ! Last configuration change at 18:31:19 UTC Wed Sep 2 2026
+          !
+          version 15.9
+          service timestamps debug datetime msec
+          service timestamps log datetime msec
+          no service password-encryption
+          !
+          hostname R3
+          !
+          boot-start-marker
+          boot-end-marker
+          !
+          !
+          no logging console
+          !
+          no aaa new-model
+          !
+          !
+          !
+          mmi polling-interval 60
+          no mmi auto-configure
+          no mmi pvc
+          mmi snmp-timeout 180
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          ip cef
+          no ipv6 cef
+          !
+          multilink bundle-name authenticated
+          !
+          !
+          !
+          !
+          !
+          redundancy
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          interface GigabitEthernet0/0
+           ip address 192.168.34.3 255.255.255.0
+           ip policy route-map PBR_SPLIT_RETURN
+           ip ospf 1 area 0
+           duplex auto
+           speed auto
+           media-type rj45
+          !
+          interface GigabitEthernet0/1
+           ip address 192.168.23.3 255.255.255.0
+           ip ospf 1 area 0
+           duplex auto
+           speed auto
+           media-type rj45
+          !
+          interface GigabitEthernet0/2
+           no ip address
+           shutdown
+           duplex auto
+           speed auto
+           media-type rj45
+          !
+          interface GigabitEthernet0/3
+           ip address 172.16.33.3 255.255.255.0
+           ip ospf 1 area 0
+           duplex auto
+           speed auto
+           media-type rj45
+          !
+          router ospf 1
+           router-id 3.3.3.3
+           auto-cost reference-bandwidth 1000000
+          !
+          ip forward-protocol nd
+          !
+          !
+          no ip http server
+          no ip http secure-server
+          !
+          ip access-list extended PBR_RETURN_10.1.0.0/24
+           permit ip any 10.1.0.0 0.0.0.255
+          ip access-list extended PBR_RETURN_10.1.1.0/24
+           permit ip any 10.1.1.0 0.0.0.255
+          !
+          ipv6 ioam timestamp
+          !
+          route-map PBR_SPLIT_RETURN permit 10
+           match ip address PBR_RETURN_10.1.0.0/24
+           set ip next-hop 172.16.33.1
+          !
+          route-map PBR_SPLIT_RETURN permit 20
+           match ip address PBR_RETURN_10.1.1.0/24
+           set ip next-hop 192.168.23.2
+          !
+          !
+          !
+          control-plane
+          !
+          banner exec ^C
+          **************************************************************************
+          * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+          * education. IOSv is provided as-is and is not supported by Cisco's      *
+          * Technical Advisory Center. Any use or disclosure, in whole or in part, *
+          * of the IOSv Software or Documentation to any third party for any       *
+          * purposes is expressly prohibited except as otherwise authorized by     *
+          * Cisco in writing.                                                      *
+          **************************************************************************^C
+          banner incoming ^C
+          **************************************************************************
+          * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+          * education. IOSv is provided as-is and is not supported by Cisco's      *
+          * Technical Advisory Center. Any use or disclosure, in whole or in part, *
+          * of the IOSv Software or Documentation to any third party for any       *
+          * purposes is expressly prohibited except as otherwise authorized by     *
+          * Cisco in writing.                                                      *
+          **************************************************************************^C
+          banner login ^C
+          **************************************************************************
+          * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+          * education. IOSv is provided as-is and is not supported by Cisco's      *
+          * Technical Advisory Center. Any use or disclosure, in whole or in part, *
+          * of the IOSv Software or Documentation to any third party for any       *
+          * purposes is expressly prohibited except as otherwise authorized by     *
+          * Cisco in writing.                                                      *
+          **************************************************************************^C
+          !
+          line con 0
+           exec-timeout 0 0
+          line aux 0
+          line vty 0 4
+           exec-timeout 0 0
+           login
+           transport input none
+          !
+          no scheduler allocate
+          !
+          end
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n3
+    image_definition: null
+    label: R3
+    node_definition: iosv
+    parameters: {}
+    priority: null
+    pyats:
+      username: null
+      password: null
+      enable_password: null
+    ram: null
+    tags: []
+    x: 80
+    y: 40
+    interfaces:
+      - id: i0
+        label: Loopback0
+        mac_address: null
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        mac_address: null
+        type: physical
+        slot: 0
+      - id: i2
+        label: GigabitEthernet0/1
+        mac_address: null
+        type: physical
+        slot: 1
+      - id: i3
+        label: GigabitEthernet0/2
+        mac_address: null
+        type: physical
+        slot: 2
+      - id: i4
+        label: GigabitEthernet0/3
+        mac_address: null
+        type: physical
+        slot: 3
+  - boot_disk_size: null
+    configuration: []
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n4
+    image_definition: null
+    label: R4
+    node_definition: iosv
+    parameters: {}
+    priority: null
+    pyats:
+      username: null
+      password: null
+      enable_password: null
+    ram: null
+    tags: []
+    x: 400
+    y: 40
+    interfaces:
+      - id: i0
+        label: Loopback0
+        mac_address: null
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        mac_address: null
+        type: physical
+        slot: 0
+      - id: i2
+        label: GigabitEthernet0/1
+        mac_address: null
+        type: physical
+        slot: 1
+      - id: i3
+        label: GigabitEthernet0/2
+        mac_address: null
+        type: physical
+        slot: 2
+      - id: i4
+        label: GigabitEthernet0/3
+        mac_address: null
+        type: physical
+        slot: 3
+links:
+  - id: l0
+    n1: n0
+    n2: n1
+    i1: i1
+    i2: i1
+    conditioning: {}
+    label: iosv-0-GigabitEthernet0/0<->iosv-1-GigabitEthernet0/0
+  - id: l1
+    n1: n1
+    n2: n3
+    i1: i2
+    i2: i2
+    conditioning: {}
+    label: iosv-1-GigabitEthernet0/1<->iosv-3-GigabitEthernet0/1
+  - id: l2
+    n1: n3
+    n2: n4
+    i1: i1
+    i2: i1
+    conditioning: {}
+    label: iosv-3-GigabitEthernet0/0<->iosv-4-GigabitEthernet0/0
+  - id: l3
+    n1: n1
+    n2: n2
+    i1: i3
+    i2: i3
+    conditioning: {}
+    label: iosv-1-GigabitEthernet0/2<->iosv-2-GigabitEthernet0/2
+  - id: l4
+    n1: n2
+    n2: n3
+    i1: i4
+    i2: i4
+    conditioning: {}
+    label: iosv-2-GigabitEthernet0/3<->iosv-3-GigabitEthernet0/3
+lab:
+  description: ''
+  notes: |-
+    =====================================================
+    PBR LAB - ROUTING AROUND A FIREWALL (CCNP ENCOR)
+    =====================================================
+
+    TOPOLOGY (5 routers + 1 firewall):
+
+    R1 --- G1 (R2)
+    R2 --- G3 (FW) --- G3 (R3)
+    R2 --- G2 (R3)          (direct link, bypasses FW)
+    R3 --- G2 (R4)
+
+    ---------------------------------------------------
+    ADDRESSING TABLE
+    ---------------------------------------------------
+    Device   Interface     Network             IP
+    R1       Lo0           10.1.0.0/24         .1
+    R1       Lo1           10.1.1.0/24         .1
+    R1       G1             192.168.12.0/24     .1
+    R2       G1             192.168.12.0/24     .2
+    R2       G2             192.168.23.0/24     .2
+    R2       G3             172.16.22.0/24      .2
+    FW       inside         172.16.22.0/24      .1
+    FW       outside        172.16.33.0/24      .1
+    R3       G3             172.16.33.0/24      .3
+    R3       G1             192.168.23.0/24     .3
+    R3       G2             192.168.34.0/24     .3
+    R4       G1             192.168.34.0/24     .4
+    R4       Lo0            10.4.4.0/24         .4
+
+    Note: R2 and R3 have TWO paths between them:
+      - via FW (172.16.22.0/24 <-> 172.16.33.0/24)
+      - direct (192.168.23.0/24)
+    PBR decides which one each source network uses.
+
+    =====================================================
+    STEP 1 - BASE CONFIG AND REACHABILITY
+    =====================================================
+
+    1a) Configure IP addresses on all interfaces per the
+        addressing table above, including R1's Lo0/Lo1 and
+        R4's Lo0.
+
+    1b) Enable a single IGP (OSPF area 0) on every link,
+        including loopbacks, so R1 and R4 have full
+        reachability to each other before PBR is added.
+
+    Verify:
+    - show ip route on R1 shows both 10.4.4.0/24 reachable
+    - show ip route on R4 shows both 10.1.0.0/24 and
+      10.1.1.0/24 reachable
+    - traceroute 10.4.4.1 source 10.1.0.1  (note the path)
+    - traceroute 10.4.4.1 source 10.1.1.1  (note the path)
+
+    =====================================================
+    STEP 2 - PBR ON R2 (OUTBOUND SPLIT BY SOURCE)
+    =====================================================
+
+    Goal: force 10.1.0.0/24 through the firewall path, and
+    force 10.1.1.0/24 through the direct path.
+
+    2a) On R2, build two ACLs matching each source network:
+
+        access-list 101 permit ip 10.1.0.0 0.0.0.255 any
+        access-list 102 permit ip 10.1.1.0 0.0.0.255 any
+
+    2b) Build a route-map that sets the next hop per ACL match:
+
+        route-map PBR-SPLIT permit 10
+         match ip address 101
+         set ip next-hop 172.16.22.1
+
+        route-map PBR-SPLIT permit 20
+         match ip address 102
+         set ip next-hop 192.168.23.3
+
+        route-map PBR-SPLIT permit 30
+        ! no match = fall through to normal routing
+
+    2c) Apply the policy on the INGRESS interface (G1, facing
+        R1):
+
+        interface GigabitEthernet1
+         ip policy route-map PBR-SPLIT
+
+    Verify:
+    - show route-map PBR-SPLIT
+    - show ip policy
+    - traceroute 10.4.4.1 source 10.1.0.1
+      -> should now go R2 -> FW -> R3 -> R4
+    - traceroute 10.4.4.1 source 10.1.1.1
+      -> should now go R2 -> R3 -> R4 direct
+
+    =====================================================
+    STEP 3 - PBR ON R3 (RETURN TRAFFIC, KEEP SYMMETRIC)
+    =====================================================
+
+    Goal: make sure return traffic takes the SAME path back,
+    matched by destination this time. If you skip this, the
+    firewall (stateful) will drop the 10.1.0.0/24 flow's
+    return packets because they come back on a path the FW
+    never saw the outbound packet on.
+
+    3a) On R3, build two ACLs matching each destination
+        network:
+
+        access-list 101 permit ip any 10.1.0.0 0.0.0.255
+        access-list 102 permit ip any 10.1.1.0 0.0.0.255
+
+    3b) Build the return route-map:
+
+        route-map PBR-RETURN permit 10
+         match ip address 101
+         set ip next-hop 172.16.33.1
+
+        route-map PBR-RETURN permit 20
+         match ip address 102
+         set ip next-hop 192.168.23.2
+
+        route-map PBR-RETURN permit 30
+
+    3c) Apply on the ingress interface (G2, facing R4):
+
+        interface GigabitEthernet2
+         ip policy route-map PBR-RETURN
+
+    Test:
+    - traceroute 10.1.0.1 source 10.4.4.1 from R4
+      -> should return R3 -> FW -> R2
+    - traceroute 10.1.1.1 source 10.4.4.1 from R4
+      -> should return R3 -> R2 direct
+    - End-to-end ping/traceroute from R1 to R4 for both
+      sources should now show fully symmetric paths
+
+    =====================================================
+    STEP 4 - FAILURE CASE (OPTIONAL)
+    =====================================================
+
+    Shut down R2's G3 (link to FW). Traffic matching ACL 101
+    will still try to policy-route to 172.16.22.1 and may
+    black-hole instead of falling back to the IGP route,
+    since "set ip next-hop" does not auto fail over.
+
+    Fix by adding:
+
+        set ip next-hop verify-availability
+
+    or by switching to:
+
+        set ip next-hop recursive
+
+    Compare behavior before/after with the link down.
+
+    =====================================================
+    FINAL VERIFICATION CHECKLIST
+    =====================================================
+    [ ] R1 and R4 loopbacks fully reachable via IGP before PBR
+    [ ] R2 PBR route-map applied on ingress interface (G1)
+    [ ] R3 PBR route-map applied on ingress interface (G2)
+    [ ] 10.1.0.0/24 traffic takes R2 -> FW -> R3 path
+    [ ] 10.1.1.0/24 traffic takes R2 -> R3 direct path
+    [ ] Return traffic on R3 mirrors the same path (symmetric)
+    [ ] Firewall does not drop any flow due to asymmetric routing
+    [ ] Failure-case behavior tested and understood (optional)
+
+    =====================================================
+    END OF LAB
+    =====================================================
+  title: 031 Lab - PBR
+  node_staging:
+    enabled: false
+    start_remaining: true
+    abort_on_failure: false
+  version: 0.3.1
