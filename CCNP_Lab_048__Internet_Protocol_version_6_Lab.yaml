@@ -7,9 +7,9 @@ nodes:
         content: |-
           Building configuration...
 
-          Current configuration : 3341 bytes
+          Current configuration : 3589 bytes
           !
-          ! Last configuration change at 13:55:28 UTC Mon Sep 14 2026
+          ! Last configuration change at 14:14:52 UTC Mon Sep 14 2026
           !
           version 15.9
           service timestamps debug datetime msec
@@ -70,26 +70,24 @@ nodes:
           !
           !
           interface Loopback0
-           ip address 1.1.1.1 255.255.255.255
-           ip ospf 1 area 0
+           no ip address
+           ipv6 address 3FFE:ABCD:1111:1::1/64
           !
           interface Tunnel0
            no ip address
            no ip redirects
-           ipv6 address 2002:101:101::1/64
-           tunnel source 1.1.1.1
+           tunnel source GigabitEthernet0/0
            tunnel mode ipv6ip 6to4
           !
           interface GigabitEthernet0/0
            ip address 10.0.0.1 255.255.255.252
-           ip ospf 1 area 0
            duplex auto
            speed auto
            media-type rj45
           !
           interface GigabitEthernet0/1
-           ip address 10.0.0.5 255.255.255.252
-           ip ospf 1 area 0
+           no ip address
+           shutdown
            duplex auto
            speed auto
            media-type rj45
@@ -108,8 +106,25 @@ nodes:
            speed auto
            media-type rj45
           !
-          router ospf 1
-           passive-interface Loopback0
+          !
+          router eigrp 254
+           network 10.0.0.1 0.0.0.0
+           eigrp router-id 1.1.1.1
+          !
+          router bgp 254
+           bgp router-id 1.1.1.1
+           bgp log-neighbor-changes
+           no bgp default ipv4-unicast
+           neighbor ::10.0.0.14 remote-as 254
+           !
+           address-family ipv4
+           exit-address-family
+           !
+           address-family ipv6
+            network 3FFE:ABCD:1111:1::/64
+            neighbor ::10.0.0.14 activate
+            neighbor ::10.0.0.14 next-hop-self
+           exit-address-family
           !
           ip forward-protocol nd
           !
@@ -117,7 +132,6 @@ nodes:
           no ip http server
           no ip http secure-server
           !
-          ipv6 route 2002::/16 Tunnel0
           ipv6 ioam timestamp
           !
           !
@@ -212,9 +226,9 @@ nodes:
         content: |-
           Building configuration...
 
-          Current configuration : 3344 bytes
+          Current configuration : 3120 bytes
           !
-          ! Last configuration change at 13:55:26 UTC Mon Sep 14 2026
+          ! Last configuration change at 14:14:52 UTC Mon Sep 14 2026
           !
           version 15.9
           service timestamps debug datetime msec
@@ -274,28 +288,14 @@ nodes:
           !
           !
           !
-          interface Loopback0
-           ip address 2.2.2.2 255.255.255.255
-           ip ospf 1 area 0
-          !
-          interface Tunnel0
-           no ip address
-           no ip redirects
-           ipv6 address 2002:202:202::1/64
-           ipv6 address 2002:202:202::2/64
-           tunnel source 2.2.2.2
-           tunnel mode ipv6ip 6to4
-          !
           interface GigabitEthernet0/0
            ip address 10.0.0.2 255.255.255.252
-           ip ospf 1 area 0
            duplex auto
            speed auto
            media-type rj45
           !
           interface GigabitEthernet0/1
-           no ip address
-           shutdown
+           ip address 10.0.0.9 255.255.255.252
            duplex auto
            speed auto
            media-type rj45
@@ -314,8 +314,11 @@ nodes:
            speed auto
            media-type rj45
           !
-          router ospf 1
-           passive-interface Loopback0
+          !
+          router eigrp 254
+           network 10.0.0.2 0.0.0.0
+           network 10.0.0.9 0.0.0.0
+           eigrp router-id 2.2.2.2
           !
           ip forward-protocol nd
           !
@@ -323,7 +326,6 @@ nodes:
           no ip http server
           no ip http secure-server
           !
-          ipv6 route 2002::/16 Tunnel0
           ipv6 ioam timestamp
           !
           !
@@ -418,9 +420,9 @@ nodes:
         content: |-
           Building configuration...
 
-          Current configuration : 3294 bytes
+          Current configuration : 3588 bytes
           !
-          ! Last configuration change at 13:55:27 UTC Mon Sep 14 2026
+          ! Last configuration change at 14:14:52 UTC Mon Sep 14 2026
           !
           version 15.9
           service timestamps debug datetime msec
@@ -455,7 +457,8 @@ nodes:
           !
           !
           ip cef
-          no ipv6 cef
+          ipv6 unicast-routing
+          ipv6 cef
           !
           multilink bundle-name authenticated
           !
@@ -480,19 +483,17 @@ nodes:
           !
           !
           interface Loopback0
-           ip address 4.4.4.4 255.255.255.255
-           ip ospf 1 area 0
+           no ip address
+           ipv6 address 3FFE:ABCD:1111:4::4/64
           !
           interface Tunnel0
            no ip address
            no ip redirects
-           ipv6 address 2002:404:404::4/64
-           tunnel source 4.4.4.4
+           tunnel source GigabitEthernet0/0
            tunnel mode ipv6ip 6to4
           !
           interface GigabitEthernet0/0
            ip address 10.0.0.14 255.255.255.252
-           ip ospf 1 area 0
            duplex auto
            speed auto
            media-type rj45
@@ -518,8 +519,25 @@ nodes:
            speed auto
            media-type rj45
           !
-          router ospf 1
-           passive-interface Loopback0
+          !
+          router eigrp 254
+           network 10.0.0.14 0.0.0.0
+           eigrp router-id 4.4.4.4
+          !
+          router bgp 254
+           bgp router-id 4.4.4.4
+           bgp log-neighbor-changes
+           no bgp default ipv4-unicast
+           neighbor ::10.0.0.1 remote-as 254
+           !
+           address-family ipv4
+           exit-address-family
+           !
+           address-family ipv6
+            network 3FFE:ABCD:1111:4::/64
+            neighbor ::10.0.0.1 activate
+            neighbor ::10.0.0.1 next-hop-self
+           exit-address-family
           !
           ip forward-protocol nd
           !
@@ -527,7 +545,6 @@ nodes:
           no ip http server
           no ip http secure-server
           !
-          ipv6 route 2002::/16 Tunnel0
           ipv6 ioam timestamp
           !
           !
@@ -622,9 +639,9 @@ nodes:
         content: |-
           Building configuration...
 
-          Current configuration : 3324 bytes
+          Current configuration : 3124 bytes
           !
-          ! Last configuration change at 13:55:26 UTC Mon Sep 14 2026
+          ! Last configuration change at 14:14:52 UTC Mon Sep 14 2026
           !
           version 15.9
           service timestamps debug datetime msec
@@ -659,7 +676,8 @@ nodes:
           !
           !
           ip cef
-          no ipv6 cef
+          ipv6 unicast-routing
+          ipv6 cef
           !
           multilink bundle-name authenticated
           !
@@ -683,27 +701,14 @@ nodes:
           !
           !
           !
-          interface Loopback0
-           ip address 3.3.3.3 255.255.255.255
-           ip ospf 1 area 0
-          !
-          interface Tunnel0
-           no ip address
-           no ip redirects
-           ipv6 address 2002:303:303::3/64
-           tunnel source 3.3.3.3
-           tunnel mode ipv6ip 6to4
-          !
           interface GigabitEthernet0/0
-           ip address 10.0.0.13 255.255.255.252
-           ip ospf 1 area 0
+           ip address 10.0.0.10 255.255.255.252
            duplex auto
            speed auto
            media-type rj45
           !
           interface GigabitEthernet0/1
-           ip address 10.0.0.6 255.255.255.252
-           ip ospf 1 area 0
+           ip address 10.0.0.13 255.255.255.252
            duplex auto
            speed auto
            media-type rj45
@@ -722,8 +727,11 @@ nodes:
            speed auto
            media-type rj45
           !
-          router ospf 1
-           passive-interface Loopback0
+          !
+          router eigrp 254
+           network 10.0.0.10 0.0.0.0
+           network 10.0.0.13 0.0.0.0
+           eigrp router-id 3.3.3.3
           !
           ip forward-protocol nd
           !
@@ -731,7 +739,6 @@ nodes:
           no ip http server
           no ip http secure-server
           !
-          ipv6 route 2002::/16 Tunnel0
           ipv6 ioam timestamp
           !
           !
@@ -829,23 +836,23 @@ links:
     conditioning: {}
     label: R1-GigabitEthernet0/0<->R2-GigabitEthernet0/0
   - id: l1
-    n1: n2
-    n2: n3
-    i1: i1
-    i2: i1
-    conditioning: {}
-    label: R4-GigabitEthernet0/0<->R3-GigabitEthernet0/0
-  - id: l2
-    n1: n0
+    n1: n1
     n2: n3
     i1: i2
-    i2: i2
+    i2: i1
     conditioning: {}
-    label: R1-GigabitEthernet0/1<->R3-GigabitEthernet0/1
+    label: R2-GigabitEthernet0/1<->R3-GigabitEthernet0/0
+  - id: l2
+    n1: n3
+    n2: n2
+    i1: i2
+    i2: i1
+    conditioning: {}
+    label: R3-GigabitEthernet0/1<->R4-GigabitEthernet0/0
 lab:
   description: ''
   notes: ''
-  title: 'CCNP Lab 047: Internet Protocol version 6 Lab'
+  title: 'CCNP Lab 048: Internet Protocol version 6 Lab'
   node_staging:
     enabled: false
     start_remaining: true

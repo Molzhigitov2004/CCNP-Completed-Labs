@@ -4,7 +4,185 @@ nodes:
   - boot_disk_size: null
     configuration:
       - name: ios_config.txt
-        content: hostname R1
+        content: |-
+          Building configuration...
+
+          Current configuration : 3988 bytes
+          !
+          ! Last configuration change at 13:47:32 UTC Mon Sep 14 2026
+          !
+          version 15.9
+          service timestamps debug datetime msec
+          service timestamps log datetime msec
+          no service password-encryption
+          !
+          hostname R1
+          !
+          boot-start-marker
+          boot-end-marker
+          !
+          !
+          no logging console
+          !
+          no aaa new-model
+          !
+          !
+          !
+          mmi polling-interval 60
+          no mmi auto-configure
+          no mmi pvc
+          mmi snmp-timeout 180
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          ip cef
+          ipv6 unicast-routing
+          ipv6 cef
+          !
+          multilink bundle-name authenticated
+          !
+          !
+          !
+          !
+          !
+          redundancy
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          interface Loopback0
+           no ip address
+           ipv6 address 3FFE:ABCD:1111:1::1/64
+          !
+          interface GigabitEthernet0/0
+           no ip address
+           duplex auto
+           speed auto
+           media-type rj45
+           ipv6 address 2001:ABCD:1111:1::1/64
+          !
+          interface GigabitEthernet0/1
+           no ip address
+           shutdown
+           duplex auto
+           speed auto
+           media-type rj45
+          !
+          interface GigabitEthernet0/2
+           no ip address
+           duplex auto
+           speed auto
+           media-type rj45
+           ipv6 address 2001:ABCD:1111:2::1/64
+          !
+          interface GigabitEthernet0/3
+           no ip address
+           shutdown
+           duplex auto
+           speed auto
+           media-type rj45
+          !
+          router bgp 123
+           bgp router-id 1.1.1.1
+           bgp log-neighbor-changes
+           neighbor 2001:ABCD:1111:1::2 remote-as 456
+           neighbor 2001:ABCD:1111:2::3 remote-as 456
+           !
+           address-family ipv4
+            no neighbor 2001:ABCD:1111:1::2 activate
+            no neighbor 2001:ABCD:1111:2::3 activate
+           exit-address-family
+           !
+           address-family ipv6
+            network 3FFE:ABCD:1111:1::/64 route-map SET_COM
+            neighbor 2001:ABCD:1111:1::2 activate
+            neighbor 2001:ABCD:1111:1::2 send-community both
+            neighbor 2001:ABCD:1111:2::3 activate
+            neighbor 2001:ABCD:1111:2::3 send-community both
+            neighbor 2001:ABCD:1111:2::3 route-map PREFER_R3_AS456 in
+           exit-address-family
+          !
+          ip forward-protocol nd
+          !
+          ip bgp-community new-format
+          ip as-path access-list 101 permit ^456$
+          !
+          no ip http server
+          no ip http secure-server
+          !
+          ipv6 ioam timestamp
+          !
+          route-map PREFER_R3_AS456 permit 10
+           match as-path 101
+           set local-preference 200
+          !
+          route-map PREFER_R3_AS456 permit 20
+          !
+          route-map SET_COM permit 10
+           set community 123:1
+          !
+          !
+          !
+          control-plane
+          !
+          banner exec ^C
+          **************************************************************************
+          * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+          * education. IOSv is provided as-is and is not supported by Cisco's      *
+          * Technical Advisory Center. Any use or disclosure, in whole or in part, *
+          * of the IOSv Software or Documentation to any third party for any       *
+          * purposes is expressly prohibited except as otherwise authorized by     *
+          * Cisco in writing.                                                      *
+          **************************************************************************^C
+          banner incoming ^C
+          **************************************************************************
+          * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+          * education. IOSv is provided as-is and is not supported by Cisco's      *
+          * Technical Advisory Center. Any use or disclosure, in whole or in part, *
+          * of the IOSv Software or Documentation to any third party for any       *
+          * purposes is expressly prohibited except as otherwise authorized by     *
+          * Cisco in writing.                                                      *
+          **************************************************************************^C
+          banner login ^C
+          **************************************************************************
+          * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+          * education. IOSv is provided as-is and is not supported by Cisco's      *
+          * Technical Advisory Center. Any use or disclosure, in whole or in part, *
+          * of the IOSv Software or Documentation to any third party for any       *
+          * purposes is expressly prohibited except as otherwise authorized by     *
+          * Cisco in writing.                                                      *
+          **************************************************************************^C
+          !
+          line con 0
+           exec-timeout 0 0
+          line aux 0
+          line vty 0 4
+           exec-timeout 0 0
+           login
+           transport input none
+          !
+          no scheduler allocate
+          !
+          end
     cpu_limit: null
     cpus: null
     data_volume: null
@@ -51,7 +229,180 @@ nodes:
   - boot_disk_size: null
     configuration:
       - name: ios_config.txt
-        content: hostname R2
+        content: |-
+          Building configuration...
+
+          Current configuration : 3808 bytes
+          !
+          ! Last configuration change at 13:47:32 UTC Mon Sep 14 2026
+          !
+          version 15.9
+          service timestamps debug datetime msec
+          service timestamps log datetime msec
+          no service password-encryption
+          !
+          hostname R2
+          !
+          boot-start-marker
+          boot-end-marker
+          !
+          !
+          no logging console
+          !
+          no aaa new-model
+          !
+          !
+          !
+          mmi polling-interval 60
+          no mmi auto-configure
+          no mmi pvc
+          mmi snmp-timeout 180
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          ip cef
+          ipv6 unicast-routing
+          ipv6 cef
+          !
+          multilink bundle-name authenticated
+          !
+          !
+          !
+          !
+          !
+          redundancy
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          interface Loopback0
+           no ip address
+           ipv6 address 3FFE:ABCD:1111:2::2/64
+          !
+          interface GigabitEthernet0/0
+           no ip address
+           duplex auto
+           speed auto
+           media-type rj45
+           ipv6 address 2001:ABCD:1111:1::2/64
+          !
+          interface GigabitEthernet0/1
+           no ip address
+           duplex auto
+           speed auto
+           media-type rj45
+           ipv6 address 2001:ABCD:1111:3::2/64
+          !
+          interface GigabitEthernet0/2
+           no ip address
+           shutdown
+           duplex auto
+           speed auto
+           media-type rj45
+          !
+          interface GigabitEthernet0/3
+           no ip address
+           shutdown
+           duplex auto
+           speed auto
+           media-type rj45
+          !
+          router bgp 456
+           bgp router-id 2.2.2.2
+           bgp log-neighbor-changes
+           neighbor 2001:ABCD:1111:1::1 remote-as 123
+           neighbor 2001:ABCD:1111:3::3 remote-as 456
+           !
+           address-family ipv4
+            no neighbor 2001:ABCD:1111:1::1 activate
+            no neighbor 2001:ABCD:1111:3::3 activate
+           exit-address-family
+           !
+           address-family ipv6
+            network 3FFE:ABCD:1111:2::/64
+            neighbor 2001:ABCD:1111:1::1 activate
+            neighbor 2001:ABCD:1111:1::1 send-community both
+            neighbor 2001:ABCD:1111:3::3 activate
+           exit-address-family
+          !
+          ip forward-protocol nd
+          !
+          ip bgp-community new-format
+          ip as-path access-list 101 permit ^123$
+          !
+          no ip http server
+          no ip http secure-server
+          !
+          ipv6 ioam timestamp
+          !
+          route-map PREFER_R3_AS123 permit 10
+           match as-path 101
+           set local-preference 200
+          !
+          route-map PREFER_R3_AS123 permit 20
+          !
+          !
+          !
+          control-plane
+          !
+          banner exec ^C
+          **************************************************************************
+          * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+          * education. IOSv is provided as-is and is not supported by Cisco's      *
+          * Technical Advisory Center. Any use or disclosure, in whole or in part, *
+          * of the IOSv Software or Documentation to any third party for any       *
+          * purposes is expressly prohibited except as otherwise authorized by     *
+          * Cisco in writing.                                                      *
+          **************************************************************************^C
+          banner incoming ^C
+          **************************************************************************
+          * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+          * education. IOSv is provided as-is and is not supported by Cisco's      *
+          * Technical Advisory Center. Any use or disclosure, in whole or in part, *
+          * of the IOSv Software or Documentation to any third party for any       *
+          * purposes is expressly prohibited except as otherwise authorized by     *
+          * Cisco in writing.                                                      *
+          **************************************************************************^C
+          banner login ^C
+          **************************************************************************
+          * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+          * education. IOSv is provided as-is and is not supported by Cisco's      *
+          * Technical Advisory Center. Any use or disclosure, in whole or in part, *
+          * of the IOSv Software or Documentation to any third party for any       *
+          * purposes is expressly prohibited except as otherwise authorized by     *
+          * Cisco in writing.                                                      *
+          **************************************************************************^C
+          !
+          line con 0
+           exec-timeout 0 0
+          line aux 0
+          line vty 0 4
+           exec-timeout 0 0
+           login
+           transport input none
+          !
+          no scheduler allocate
+          !
+          end
     cpu_limit: null
     cpus: null
     data_volume: null
@@ -98,7 +449,169 @@ nodes:
   - boot_disk_size: null
     configuration:
       - name: ios_config.txt
-        content: hostname R4
+        content: |-
+          Building configuration...
+
+          Current configuration : 3442 bytes
+          !
+          ! Last configuration change at 13:47:33 UTC Mon Sep 14 2026
+          !
+          version 15.9
+          service timestamps debug datetime msec
+          service timestamps log datetime msec
+          no service password-encryption
+          !
+          hostname R4
+          !
+          boot-start-marker
+          boot-end-marker
+          !
+          !
+          no logging console
+          !
+          no aaa new-model
+          !
+          !
+          !
+          mmi polling-interval 60
+          no mmi auto-configure
+          no mmi pvc
+          mmi snmp-timeout 180
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          ip cef
+          ipv6 unicast-routing
+          ipv6 cef
+          !
+          multilink bundle-name authenticated
+          !
+          !
+          !
+          !
+          !
+          redundancy
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          interface Loopback0
+           no ip address
+           ipv6 address 3FFE:ABCD:1111:4::4/64
+          !
+          interface GigabitEthernet0/0
+           no ip address
+           duplex auto
+           speed auto
+           media-type rj45
+           ipv6 address 2001:ABCD:1111:4::4/64
+          !
+          interface GigabitEthernet0/1
+           no ip address
+           shutdown
+           duplex auto
+           speed auto
+           media-type rj45
+          !
+          interface GigabitEthernet0/2
+           no ip address
+           shutdown
+           duplex auto
+           speed auto
+           media-type rj45
+          !
+          interface GigabitEthernet0/3
+           no ip address
+           shutdown
+           duplex auto
+           speed auto
+           media-type rj45
+          !
+          router bgp 456
+           bgp router-id 4.4.4.4
+           bgp log-neighbor-changes
+           neighbor 2001:ABCD:1111:4::3 remote-as 456
+           !
+           address-family ipv4
+            no neighbor 2001:ABCD:1111:4::3 activate
+           exit-address-family
+           !
+           address-family ipv6
+            network 3FFE:ABCD:1111:4::/64
+            neighbor 2001:ABCD:1111:4::3 activate
+           exit-address-family
+          !
+          ip forward-protocol nd
+          !
+          ip bgp-community new-format
+          !
+          no ip http server
+          no ip http secure-server
+          !
+          ipv6 ioam timestamp
+          !
+          !
+          !
+          control-plane
+          !
+          banner exec ^C
+          **************************************************************************
+          * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+          * education. IOSv is provided as-is and is not supported by Cisco's      *
+          * Technical Advisory Center. Any use or disclosure, in whole or in part, *
+          * of the IOSv Software or Documentation to any third party for any       *
+          * purposes is expressly prohibited except as otherwise authorized by     *
+          * Cisco in writing.                                                      *
+          **************************************************************************^C
+          banner incoming ^C
+          **************************************************************************
+          * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+          * education. IOSv is provided as-is and is not supported by Cisco's      *
+          * Technical Advisory Center. Any use or disclosure, in whole or in part, *
+          * of the IOSv Software or Documentation to any third party for any       *
+          * purposes is expressly prohibited except as otherwise authorized by     *
+          * Cisco in writing.                                                      *
+          **************************************************************************^C
+          banner login ^C
+          **************************************************************************
+          * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+          * education. IOSv is provided as-is and is not supported by Cisco's      *
+          * Technical Advisory Center. Any use or disclosure, in whole or in part, *
+          * of the IOSv Software or Documentation to any third party for any       *
+          * purposes is expressly prohibited except as otherwise authorized by     *
+          * Cisco in writing.                                                      *
+          **************************************************************************^C
+          !
+          line con 0
+           exec-timeout 0 0
+          line aux 0
+          line vty 0 4
+           exec-timeout 0 0
+           login
+           transport input none
+          !
+          no scheduler allocate
+          !
+          end
     cpu_limit: null
     cpus: null
     data_volume: null
@@ -145,7 +658,186 @@ nodes:
   - boot_disk_size: null
     configuration:
       - name: ios_config.txt
-        content: hostname R3
+        content: |-
+          Building configuration...
+
+          Current configuration : 4222 bytes
+          !
+          ! Last configuration change at 13:47:32 UTC Mon Sep 14 2026
+          !
+          version 15.9
+          service timestamps debug datetime msec
+          service timestamps log datetime msec
+          no service password-encryption
+          !
+          hostname R3
+          !
+          boot-start-marker
+          boot-end-marker
+          !
+          !
+          no logging console
+          !
+          no aaa new-model
+          !
+          !
+          !
+          mmi polling-interval 60
+          no mmi auto-configure
+          no mmi pvc
+          mmi snmp-timeout 180
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          ip cef
+          ipv6 unicast-routing
+          ipv6 cef
+          !
+          multilink bundle-name authenticated
+          !
+          !
+          !
+          !
+          !
+          redundancy
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          interface GigabitEthernet0/0
+           no ip address
+           duplex auto
+           speed auto
+           media-type rj45
+           ipv6 address 2001:ABCD:1111:4::3/64
+          !
+          interface GigabitEthernet0/1
+           no ip address
+           duplex auto
+           speed auto
+           media-type rj45
+           ipv6 address 2001:ABCD:1111:3::3/64
+          !
+          interface GigabitEthernet0/2
+           no ip address
+           duplex auto
+           speed auto
+           media-type rj45
+           ipv6 address 2001:ABCD:1111:2::3/64
+          !
+          interface GigabitEthernet0/3
+           no ip address
+           shutdown
+           duplex auto
+           speed auto
+           media-type rj45
+          !
+          router bgp 456
+           bgp router-id 3.3.3.3
+           bgp log-neighbor-changes
+           neighbor 2001:ABCD:1111:2::1 remote-as 123
+           neighbor 2001:ABCD:1111:3::2 remote-as 456
+           neighbor 2001:ABCD:1111:4::4 remote-as 456
+           !
+           address-family ipv4
+            no neighbor 2001:ABCD:1111:2::1 activate
+            no neighbor 2001:ABCD:1111:3::2 activate
+            no neighbor 2001:ABCD:1111:4::4 activate
+           exit-address-family
+           !
+           address-family ipv6
+            neighbor 2001:ABCD:1111:2::1 activate
+            neighbor 2001:ABCD:1111:2::1 send-community both
+            neighbor 2001:ABCD:1111:3::2 activate
+            neighbor 2001:ABCD:1111:3::2 send-community both
+            neighbor 2001:ABCD:1111:3::2 default-originate route-map SET_LOCAL_AS
+            neighbor 2001:ABCD:1111:3::2 route-map PREFER_R3_AS123 out
+            neighbor 2001:ABCD:1111:4::4 activate
+            neighbor 2001:ABCD:1111:4::4 send-community both
+            neighbor 2001:ABCD:1111:4::4 default-originate route-map SET_LOCAL_AS
+           exit-address-family
+          !
+          ip forward-protocol nd
+          !
+          ip bgp-community new-format
+          ip as-path access-list 101 permit ^123$
+          !
+          no ip http server
+          no ip http secure-server
+          !
+          ipv6 ioam timestamp
+          !
+          route-map SET_LOCAL_AS permit 10
+           set community local-AS
+          !
+          route-map PREFER_R3_AS123 permit 10
+           match as-path 101
+           set local-preference 200
+          !
+          route-map PREFER_R3_AS123 permit 20
+          !
+          !
+          !
+          control-plane
+          !
+          banner exec ^C
+          **************************************************************************
+          * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+          * education. IOSv is provided as-is and is not supported by Cisco's      *
+          * Technical Advisory Center. Any use or disclosure, in whole or in part, *
+          * of the IOSv Software or Documentation to any third party for any       *
+          * purposes is expressly prohibited except as otherwise authorized by     *
+          * Cisco in writing.                                                      *
+          **************************************************************************^C
+          banner incoming ^C
+          **************************************************************************
+          * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+          * education. IOSv is provided as-is and is not supported by Cisco's      *
+          * Technical Advisory Center. Any use or disclosure, in whole or in part, *
+          * of the IOSv Software or Documentation to any third party for any       *
+          * purposes is expressly prohibited except as otherwise authorized by     *
+          * Cisco in writing.                                                      *
+          **************************************************************************^C
+          banner login ^C
+          **************************************************************************
+          * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+          * education. IOSv is provided as-is and is not supported by Cisco's      *
+          * Technical Advisory Center. Any use or disclosure, in whole or in part, *
+          * of the IOSv Software or Documentation to any third party for any       *
+          * purposes is expressly prohibited except as otherwise authorized by     *
+          * Cisco in writing.                                                      *
+          **************************************************************************^C
+          !
+          line con 0
+           exec-timeout 0 0
+          line aux 0
+          line vty 0 4
+           exec-timeout 0 0
+           login
+           transport input none
+          !
+          no scheduler allocate
+          !
+          end
     cpu_limit: null
     cpus: null
     data_volume: null
