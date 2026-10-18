@@ -7,7 +7,7 @@ annotations:
     text_content: |-
       Home Subnet 192.168.0.0/24
       Will be used as Server room's subnet
-      My host OS will be both NMS and SYSLOG server
+      so that I will be able to connect to nms
     text_font: monospace
     text_italic: false
     text_size: 12
@@ -85,9 +85,9 @@ nodes:
         content: |-
           Building configuration...
 
-          Current configuration : 3984 bytes
+          Current configuration : 4144 bytes
           !
-          ! Last configuration change at 18:47:48 gmt+5 Sun Sep 27 2026
+          ! Last configuration change at 20:41:20 gmt+5 Sun Oct 18 2026
           !
           version 15.2
           service timestamps debug datetime msec
@@ -213,6 +213,9 @@ nodes:
           ip ssh server algorithm encryption aes128-ctr aes192-ctr aes256-ctr
           ip ssh client algorithm encryption aes128-ctr aes192-ctr aes256-ctr
           !
+          ip access-list standard SNMP-NMS
+           permit 192.168.0.107
+          !
           !
           logging origin-id hostname
           logging source-interface Loopback0
@@ -220,6 +223,8 @@ nodes:
           !
           !
           !
+          snmp-server group NMS-GRP v3 priv read NMS-VIEW access SNMP-NMS
+          snmp-server view NMS-VIEW iso included
           !
           control-plane
           !
@@ -351,9 +356,9 @@ nodes:
         content: |-
           Building configuration...
 
-          Current configuration : 3984 bytes
+          Current configuration : 4144 bytes
           !
-          ! Last configuration change at 18:47:42 gmt+5 Sun Sep 27 2026
+          ! Last configuration change at 20:41:15 gmt+5 Sun Oct 18 2026
           !
           version 15.2
           service timestamps debug datetime msec
@@ -479,6 +484,9 @@ nodes:
           ip ssh server algorithm encryption aes128-ctr aes192-ctr aes256-ctr
           ip ssh client algorithm encryption aes128-ctr aes192-ctr aes256-ctr
           !
+          ip access-list standard SNMP-NMS
+           permit 192.168.0.107
+          !
           !
           logging origin-id hostname
           logging source-interface Loopback0
@@ -486,6 +494,8 @@ nodes:
           !
           !
           !
+          snmp-server group NMS-GRP v3 priv read NMS-VIEW access SNMP-NMS
+          snmp-server view NMS-VIEW iso included
           !
           control-plane
           !
@@ -617,9 +627,9 @@ nodes:
         content: |-
           Building configuration...
 
-          Current configuration : 4864 bytes
+          Current configuration : 5024 bytes
           !
-          ! Last configuration change at 18:47:23 gmt+5 Sun Sep 27 2026
+          ! Last configuration change at 20:40:55 gmt+5 Sun Oct 18 2026
           !
           version 15.2
           service timestamps debug datetime msec
@@ -778,6 +788,9 @@ nodes:
           ip ssh server algorithm encryption aes128-ctr aes192-ctr aes256-ctr
           ip ssh client algorithm encryption aes128-ctr aes192-ctr aes256-ctr
           !
+          ip access-list standard SNMP-NMS
+           permit 192.168.0.107
+          !
           !
           logging origin-id hostname
           logging source-interface Loopback0
@@ -785,6 +798,8 @@ nodes:
           !
           !
           !
+          snmp-server group NMS-GRP v3 priv read NMS-VIEW access SNMP-NMS
+          snmp-server view NMS-VIEW iso included
           !
           control-plane
           !
@@ -896,9 +911,9 @@ nodes:
         content: |-
           Building configuration...
 
-          Current configuration : 4741 bytes
+          Current configuration : 4901 bytes
           !
-          ! Last configuration change at 18:47:31 gmt+5 Sun Sep 27 2026
+          ! Last configuration change at 20:41:12 gmt+5 Sun Oct 18 2026
           !
           version 15.2
           service timestamps debug datetime msec
@@ -1050,6 +1065,9 @@ nodes:
           ip ssh server algorithm encryption aes128-ctr aes192-ctr aes256-ctr
           ip ssh client algorithm encryption aes128-ctr aes192-ctr aes256-ctr
           !
+          ip access-list standard SNMP-NMS
+           permit 192.168.0.107
+          !
           !
           logging origin-id hostname
           logging source-interface Loopback0
@@ -1057,6 +1075,8 @@ nodes:
           !
           !
           !
+          snmp-server group NMS-GRP v3 priv read NMS-VIEW access SNMP-NMS
+          snmp-server view NMS-VIEW iso included
           !
           control-plane
           !
@@ -1158,9 +1178,9 @@ nodes:
         content: |-
           Building configuration...
 
-          Current configuration : 4060 bytes
+          Current configuration : 4220 bytes
           !
-          ! Last configuration change at 18:47:33 gmt+5 Sun Sep 27 2026
+          ! Last configuration change at 20:41:13 gmt+5 Sun Oct 18 2026
           !
           version 15.2
           service timestamps debug datetime msec
@@ -1268,6 +1288,9 @@ nodes:
           ip ssh server algorithm encryption aes128-ctr aes192-ctr aes256-ctr
           ip ssh client algorithm encryption aes128-ctr aes192-ctr aes256-ctr
           !
+          ip access-list standard SNMP-NMS
+           permit 192.168.0.107
+          !
           !
           logging origin-id hostname
           logging source-interface Vlan99
@@ -1275,6 +1298,8 @@ nodes:
           !
           !
           !
+          snmp-server group NMS-GRP v3 priv read NMS-VIEW access SNMP-NMS
+          snmp-server view NMS-VIEW iso included
           !
           control-plane
           !
@@ -1365,9 +1390,9 @@ nodes:
         content: |-
           Building configuration...
 
-          Current configuration : 4060 bytes
+          Current configuration : 4220 bytes
           !
-          ! Last configuration change at 18:47:39 gmt+5 Sun Sep 27 2026
+          ! Last configuration change at 20:41:20 gmt+5 Sun Oct 18 2026
           !
           version 15.2
           service timestamps debug datetime msec
@@ -1475,6 +1500,9 @@ nodes:
           ip ssh server algorithm encryption aes128-ctr aes192-ctr aes256-ctr
           ip ssh client algorithm encryption aes128-ctr aes192-ctr aes256-ctr
           !
+          ip access-list standard SNMP-NMS
+           permit 192.168.0.107
+          !
           !
           logging origin-id hostname
           logging source-interface Vlan99
@@ -1482,6 +1510,8 @@ nodes:
           !
           !
           !
+          snmp-server group NMS-GRP v3 priv read NMS-VIEW access SNMP-NMS
+          snmp-server view NMS-VIEW iso included
           !
           control-plane
           !
@@ -1575,7 +1605,7 @@ nodes:
           :
           : Serial Number: 9ASJU14CGE0
           : Hardware:   ASAv, 2048 MB RAM, CPU Xeon 5500 series 2918 MHz
-          : Written by enable_15 at 18:48:09.647 GMT+5 Sun Sep 27 2026
+          : Written by enable_15 at 20:42:00.451 GMT+5 Sun Oct 18 2026
           !
           ASA Version 9.24(1)
           !
@@ -1586,6 +1616,7 @@ nodes:
           service-module 0 keepalive-counter 6
           names
           no mac-address auto
+          zone INSIDE
 
           !
           interface GigabitEthernet0/0
@@ -1596,11 +1627,13 @@ nodes:
           interface GigabitEthernet0/1
            nameif inside
            security-level 100
+           zone-member INSIDE
            ip address 10.0.0.6 255.255.255.252
           !
           interface GigabitEthernet0/2
-           no nameif
+           nameif inside*
            security-level 100
+           zone-member INSIDE
            ip address 10.0.0.10 255.255.255.252
           !
           interface GigabitEthernet0/3
@@ -1616,7 +1649,7 @@ nodes:
            no ip address
           !
           interface Loopback0
-           no nameif
+           nameif loopback
            ip address 10.0.5.2 255.255.255.255
           !
           ftp mode passive
@@ -1626,14 +1659,35 @@ nodes:
            name-server 192.168.0.100
            domain-name lab111.com
           no object-group-search access-control
+          object network PUBLIC-SRV
+           host 10.0.1.100
+          object network SRV-DNS-NTP
+           host 192.168.0.100
+          object-group network INTERNAL-NETS
+           network-object 10.0.0.0 255.0.0.0
+           network-object 192.168.0.0 255.255.255.0
           access-group OUTSIDE_IN in interface outside
-          access-list OUTSIDE-IN extended permit icmp host 10.0.0.1 host 10.0.1.100
-          access-list OUTSIDE-IN extended permit tcp any host 10.0.1.100 eq www
-          access-list OUTSIDE-IN extended permit tcp any host 10.0.1.100 eq https
+          access-group DMZ_IN in interface dmz
+          access-list DMZ_IN remark Public server to internal DNS and NTP only
+          access-list DMZ_IN extended permit udp object PUBLIC-SRV object SRV-DNS-NTP eq domain
+          access-list DMZ_IN extended permit tcp object PUBLIC-SRV object SRV-DNS-NTP eq domain
+          access-list DMZ_IN extended permit udp object PUBLIC-SRV object SRV-DNS-NTP eq ntp
+          access-list DMZ_IN remark Block everything else to internal networks
+          access-list DMZ_IN extended deny ip any object-group INTERNAL-NETS log
+          access-list DMZ_IN remark Internet: updates only (HTTP/HTTPS)
+          access-list DMZ_IN extended permit tcp object PUBLIC-SRV any eq www
+          access-list DMZ_IN extended permit tcp object PUBLIC-SRV any eq https
+          access-list DMZ_IN extended deny ip any any log
+          access-list OUTSIDE_IN extended permit udp host 10.0.5.1 host 192.168.0.100 eq ntp
           access-list OUTSIDE_IN extended permit udp host 10.0.5.1 host 192.168.0.107 eq syslog
+          access-list OUTSIDE_IN extended permit icmp host 10.0.0.1 host 10.0.1.100
+          access-list OUTSIDE_IN extended permit tcp any host 10.0.1.100 eq www
+          access-list OUTSIDE_IN extended permit tcp any host 10.0.1.100 eq https
+          access-list OUTSIDE_IN extended permit udp host 10.0.5.1 host 192.168.0.107 eq snmptrap
           pager lines 23
           mtu outside 1500
           mtu inside 1500
+          mtu inside* 1500
           mtu dmz 1500
           no failover
           no failover wait-disable
@@ -1648,7 +1702,7 @@ nodes:
           logging buffered informational
           logging trap informational
           logging device-id hostname
-          logging host inside 192.168.0.107
+          logging host loopback 192.168.0.107
           router ospf 1
            router-id 10.0.5.2
            network 10.0.0.2 255.255.255.255 area 0
@@ -1670,6 +1724,9 @@ nodes:
           timeout igp stale-route 0:01:10
           user-identity default-domain LOCAL
           aaa authentication login-history
+          snmp-server group NMS-GRP v3 priv
+          snmp-server user zabbix NMS-GRP v3 engineID 80000009fe3f4130477a32e80964ac87e01d1438c3616f8496 encrypted auth sha 2b:a7:ce:82:00:43:af:c8:0b:6e:8e:7d:bb:27:18:59:be:96:8a:53 priv aes 128 2b:a7:ce:82:00:43:af:c8:0b:6e:8e:7d:bb:27:18:59
+          snmp-server host loopback 192.168.0.107 poll version 3 zabbix
           no snmp-server location
           no snmp-server contact
           crypto ipsec security-association pmtu-aging infinite
@@ -1814,6 +1871,7 @@ nodes:
             inspect tftp
             inspect sip
             inspect icmp
+            inspect snmp
           policy-map type inspect dns migrated_dns_map_2
            parameters
             message-length maximum client auto
@@ -1837,7 +1895,7 @@ nodes:
             subscribe-to-alert-group inventory periodic monthly
             subscribe-to-alert-group configuration periodic monthly
             subscribe-to-alert-group telemetry periodic daily
-          Cryptochecksum:0e540c793b0b7b07121b63166a7d0050
+          Cryptochecksum:45ccde19f5d1207f97c610a3349f22e4
           : end
     cpu_limit: null
     cpus: null
@@ -1889,9 +1947,9 @@ nodes:
         content: |-
           Building configuration...
 
-          Current configuration : 4285 bytes
+          Current configuration : 4467 bytes
           !
-          ! Last configuration change at 13:47:49 UTC Sun Sep 27 2026
+          ! Last configuration change at 15:41:28 UTC Sun Oct 18 2026
           !
           version 15.9
           service timestamps debug datetime msec
@@ -2021,12 +2079,17 @@ nodes:
            permit 10.1.4.0 0.0.1.255
            permit 10.1.7.0 0.0.0.255
            permit 10.1.8.0 0.0.0.255
+          ip access-list standard SNMP-NMS
+           permit 192.168.0.107
           !
           logging origin-id hostname
           logging source-interface Loopback0
           logging host 192.168.0.107
           ipv6 ioam timestamp
           !
+          snmp-server group NMS-GRP v3 priv read NMS-VIEW access SNMP-NMS
+          snmp-server view NMS-VIEW iso included
+          snmp-server chassis-id
           !
           !
           control-plane
@@ -2123,7 +2186,7 @@ nodes:
 
           Current configuration : 2896 bytes
           !
-          ! Last configuration change at 18:47:53 gmt+5 Sun Sep 27 2026
+          ! Last configuration change at 20:41:44 gmt+5 Sun Oct 18 2026
           !
           version 15.2
           service timestamps debug datetime msec
@@ -2291,9 +2354,9 @@ nodes:
         content: |-
           Building configuration...
 
-          Current configuration : 4869 bytes
+          Current configuration : 5029 bytes
           !
-          ! Last configuration change at 18:47:06 gmt+5 Sun Sep 27 2026
+          ! Last configuration change at 20:40:47 gmt+5 Sun Oct 18 2026
           !
           version 15.2
           service timestamps debug datetime msec
@@ -2445,6 +2508,9 @@ nodes:
           ip ssh server algorithm encryption aes128-ctr aes192-ctr aes256-ctr
           ip ssh client algorithm encryption aes128-ctr aes192-ctr aes256-ctr
           !
+          ip access-list standard SNMP-NMS
+           permit 192.168.0.107
+          !
           !
           logging origin-id hostname
           logging source-interface Loopback0
@@ -2452,6 +2518,8 @@ nodes:
           !
           !
           !
+          snmp-server group NMS-GRP v3 priv read NMS-VIEW access SNMP-NMS
+          snmp-server view NMS-VIEW iso included
           !
           control-plane
           !
@@ -2560,14 +2628,14 @@ nodes:
   - boot_disk_size: null
     configuration:
       - name: default
-        content: NAT
+        content: System Bridge
     cpu_limit: null
     cpus: null
     data_volume: null
     hide_links: false
     id: n10
     image_definition: null
-    label: ext-conn-0
+    label: TO_INTERNET
     node_definition: external_connector
     parameters: {}
     priority: null
@@ -2630,7 +2698,7 @@ nodes:
     ram: null
     tags: []
     x: 600
-    y: -560
+    y: -600
     interfaces:
       - id: i0
         label: ens2
@@ -2965,7 +3033,20 @@ nodes:
         type: physical
         slot: 0
   - boot_disk_size: null
-    configuration: []
+    configuration:
+      - name: user-data
+        content: |-
+          #cloud-config
+          hostname: nms-syslog-srv
+          manage_etc_hosts: True
+          system_info:
+            default_user:
+              name: cisco
+          password: cisco
+          chpasswd: { expire: False }
+          ssh_pwauth: True
+          ssh_authorized_keys:
+            - your-ssh-pubkey-line-goes-here
     cpu_limit: null
     cpus: null
     data_volume: null
@@ -2983,10 +3064,43 @@ nodes:
     ram: null
     tags: []
     x: 200
-    y: -560
+    y: -480
     interfaces:
       - id: i0
         label: ens2
+        mac_address: null
+        type: physical
+        slot: 0
+      - id: i1
+        label: ens3
+        mac_address: null
+        type: physical
+        slot: 1
+  - boot_disk_size: null
+    configuration:
+      - name: default
+        content: System Bridge
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n22
+    image_definition: null
+    label: TO_HOST_OS
+    node_definition: external_connector
+    parameters: {}
+    priority: null
+    pyats:
+      username: null
+      password: null
+      enable_password: null
+    ram: null
+    tags: []
+    x: 400
+    y: -480
+    interfaces:
+      - id: i0
+        label: port
         mac_address: null
         type: physical
         slot: 0
@@ -3200,7 +3314,14 @@ links:
     i1: i0
     i2: i4
     conditioning: {}
-    label: ubuntu-0-ens2<->SRVRM-SW1-GigabitEthernet0/3
+    label: NMS-SYSLOG-SRV-ens2<->SRVRM-SW1-GigabitEthernet0/3
+  - id: l30
+    n1: n21
+    n2: n22
+    i1: i1
+    i2: i0
+    conditioning: {}
+    label: NMS-SYSLOG-SRV-ens3<->TO_HOST_OS-port
 lab:
   description: ''
   notes: ''
