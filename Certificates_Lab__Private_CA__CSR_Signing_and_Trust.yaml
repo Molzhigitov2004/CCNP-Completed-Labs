@@ -1,0 +1,415 @@
+annotations: []
+smart_annotations: []
+nodes:
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: "Building configuration...\n\n\nCurrent configuration : 6976 bytes\n\
+          !\n! Last configuration change at 13:21:53 UTC Sat Nov 7 2026\n! NVRAM config\
+          \ last updated at 13:20:58 UTC Sat Nov 7 2026\n!\nversion 15.9\nservice\
+          \ timestamps debug datetime msec\nservice timestamps log datetime msec\n\
+          no service password-encryption\n!\nhostname R1\n!\nboot-start-marker\nboot-end-marker\n\
+          !\n!\nno logging console\n!\nno aaa new-model\n!\n!\n!\nmmi polling-interval\
+          \ 60\nno mmi auto-configure\nno mmi pvc\nmmi snmp-timeout 180\n!\n!\n!\n\
+          !\n!\n!\n!\n!\n!\n!\n!\nip domain name lab.com\nip cef\nno ipv6 cef\n!\n\
+          multilink bundle-name authenticated\n!\n!\n!\ncrypto pki trustpoint LAB-CA\n\
+          \ enrollment terminal pem\n ip-address 10.0.0.20\n subject-name CN=R1.lab.com\n\
+          \ subject-alt-name R1.lab.com\n revocation-check none\n rsakeypair R1-KEY\n\
+          !\n!\ncrypto pki certificate chain LAB-CA\n certificate 02\n  308202FC 308201E4\
+          \ A0030201 02020102 300D0609 2A864886 F70D0101 0B050030\n  0F310D30 0B060355\
+          \ 04030C04 43413031 301E170D 32363131 30373133 31363437\n  5A170D32 37313130\
+          \ 37313331 3634375A 30153113 30110603 55040313 0A52312E\n  6C61622E 636F6D30\
+          \ 82012230 0D06092A 864886F7 0D010101 05000382 010F0030\n  82010A02 82010100\
+          \ A43AAD39 5173BECE C04F4A31 126A2954 77C29EFA 3F9CF93A\n  16F70ECE 8B68C8A5\
+          \ 1E3F20AF EA23B884 E4A87D68 339FCEA2 BD68D9E2 5EE0EF1D\n  8FAAABE1 54DB6D78\
+          \ B02B50E6 EB941C60 8830A030 47B8BC3E 5FA3B34D 3B603521\n  EFB39F61 67FE81A4\
+          \ C878AFB3 42F12994 2EF402E9 1D0BC48E BAE37DBC 360A1116\n  ECF53206 4E38F600\
+          \ 0713131C 4013F800 59FD96F9 4FF1BB64 0236B04B 6DB3F9F5\n  88871F16 C5CC80FA\
+          \ E2D58D2D 8543B8A4 FE82775C 8FE76E61 C6C72BE1 FFD428ED\n  C6C9DA0E 36409659\
+          \ 351F5487 68AF2326 04421DF7 13DFC7D0 4DB7C29B AE9D3FE2\n  D9DF69D3 3D895ACD\
+          \ 810EE436 CA677751 AF2FCE44 DD2816A2 F8BA6DCD 234FC95C\n  A6F028C8 AE402FF5\
+          \ 02030100 01A35D30 5B300906 03551D13 04023000 301D0603\n  551D0E04 160414EE\
+          \ F30D9875 C7DDFEC3 93DC774F F7F2D832 47C49E30 1F060355\n  1D230418 30168014\
+          \ A77F59A8 14A6E3AA 44FD8B9F 20F22CDB 0079ED52 300E0603\n  551D0F01 01FF0404\
+          \ 030205A0 300D0609 2A864886 F70D0101 0B050003 82010100\n  00EEDEB6 1DD2B5F8\
+          \ 085DDFDB 2EF93375 2DFE1F65 B86B2502 AAB91A1E 3C347DEB\n  5B9B191A 76210AF1\
+          \ C9EF76E9 2C8F2A12 21A7E4AC 738AFD2F 38575627 07398895\n  A3909410 58B9F9CB\
+          \ 3EB172E0 04538D55 D60EB5F4 30A2DEE4 A519DC56 B18087A4\n  8A0EF1CB 2491D6B8\
+          \ 9B82C1F0 ADFF7CAD 0CC1A7B0 A0CE1409 AD1052A9 645509B9\n  ED611450 98FA6F20\
+          \ 9D4E0434 8C5D6095 33647E60 014F56EE 30BA0C2B 54250EB5\n  29184E3D 6885E9B9\
+          \ D490786B 8C8BF9F7 086A12F8 266BE4AE F552CEEC B029D23C\n  21FCB9A9 3C21BDBA\
+          \ 89851FAE 37217578 671BF49C 819D939A 354D370C A124C690\n  09474E32 2ABEA544\
+          \ CAAA4E97 B3037467 BB99017D 9602BAC3 38706D8D E98FBA8E\n  \tquit\n certificate\
+          \ ca 6F4EC1F688B1C11CA4974CEA7A31E6C635E5B75E\n  308202FF 308201E7 A0030201\
+          \ 0202146F 4EC1F688 B1C11CA4 974CEA7A 31E6C635\n  E5B75E30 0D06092A 864886F7\
+          \ 0D01010B 0500300F 310D300B 06035504 030C0443\n  41303130 1E170D32 36313130\
+          \ 37313233 3932355A 170D3336 31313034 31323339\n  32355A30 0F310D30 0B060355\
+          \ 04030C04 43413031 30820122 300D0609 2A864886\n  F70D0101 01050003 82010F00\
+          \ 3082010A 02820101 008C1723 EDF91738 58DCE41C\n  472CDE7A C76ED0F9 D5BA7E59\
+          \ C34BF9D6 E61DFA3A CB1DBF1D 3F45E9BE 077BB8AF\n  7ED40642 DC8BF4DE 514B6865\
+          \ 7854749C 1280F376 9DF4623D 34855A9E AF2F2BC5\n  8B06AA5B 7DF0E33D 1546B85E\
+          \ ABA7C2BD C7DC268B A6C63451 1EA3A15D B14BE16C\n  76F8208A 05A12D5A 0A6CBFA3\
+          \ A999842A 23298142 92842D71 0A660CC3 D9B38B91\n  3D9134E6 BFDB78E6 16B13EC3\
+          \ AD550A90 3F9875AC C1F46707 CF722760 CF0D4096\n  C1D8133B E946C643 E2616670\
+          \ 5F149DC3 524A3A4F 0C7AC500 D72256AE 92D9A5C4\n  56F4BAB1 D703D887 CE2ACA68\
+          \ FA514A1F E767D9A3 0B3725F9 21EF8747 7CEB3C7B\n  7BC5C230 2E1B0070 92122368\
+          \ 4323F6A4 0A3B2CC6 71020301 0001A353 3051301D\n  0603551D 0E041604 14A77F59\
+          \ A814A6E3 AA44FD8B 9F20F22C DB0079ED 52301F06\n  03551D23 04183016 8014A77F\
+          \ 59A814A6 E3AA44FD 8B9F20F2 2CDB0079 ED52300F\n  0603551D 130101FF 04053003\
+          \ 0101FF30 0D06092A 864886F7 0D01010B 05000382\n  01010088 377507E8 20F4B6E7\
+          \ EA654AF7 8CAA399D 30AA26BA 00EF7624 5585D783\n  1B2B8D84 8E9B2C96 C3A0EB58\
+          \ 6A4286CC 34EB08D3 C962970D 4F455793 0F453445\n  E21E4401 30EEE3D9 67663162\
+          \ 8B1D1E75 CAF8589C 8E4919E4 FB0E2873 39913CBA\n  60DA810F C1EBFDFA 3C5B75EA\
+          \ 5B70F3CA 2DCC0A03 4EA53D2F CEEBAAA8 4DB2F010\n  58B0D59F B6A7B0BD 578B55E1\
+          \ D11824E2 2F777AD9 0822341D EBAF9597 4129BFC9\n  DA5DDA56 59E02F8A 9D76ACD6\
+          \ 6F69D7F3 27A5E773 412AF3BD 361CCA2E 01D8A6C2\n  3C0E367F 3E7F5903 E267974D\
+          \ CFE4D60E E200DE91 F1603E44 E7DEEB54 3FF9633E\n  19A466A3 8AAC7634 09F20466\
+          \ 53959C27 9D5474F7 8FCEC99A 32917AC6 B8F111CF E99B0D\n  \tquit\n!\nredundancy\n\
+          !\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\ninterface GigabitEthernet0/0\n\
+          \ ip address 10.0.0.20 255.255.255.0\n duplex auto\n speed auto\n media-type\
+          \ rj45\n!\ninterface GigabitEthernet0/1\n no ip address\n shutdown\n duplex\
+          \ auto\n speed auto\n media-type rj45\n!\ninterface GigabitEthernet0/2\n\
+          \ no ip address\n shutdown\n duplex auto\n speed auto\n media-type rj45\n\
+          !\ninterface GigabitEthernet0/3\n no ip address\n shutdown\n duplex auto\n\
+          \ speed auto\n media-type rj45\n!\nip forward-protocol nd\n!\n!\nno ip http\
+          \ server\nip http secure-server\n!\nipv6 ioam timestamp\n!\n!\n!\ncontrol-plane\n\
+          !\nbanner exec ^C\n**************************************************************************\n\
+          * IOSv is strictly limited to use for evaluation, demonstration and IOS\
+          \  *\n* education. IOSv is provided as-is and is not supported by Cisco's\
+          \      *\n* Technical Advisory Center. Any use or disclosure, in whole or\
+          \ in part, *\n* of the IOSv Software or Documentation to any third party\
+          \ for any       *\n* purposes is expressly prohibited except as otherwise\
+          \ authorized by     *\n* Cisco in writing.                             \
+          \                         *\n**************************************************************************^C\n\
+          banner incoming ^C\n**************************************************************************\n\
+          * IOSv is strictly limited to use for evaluation, demonstration and IOS\
+          \  *\n* education. IOSv is provided as-is and is not supported by Cisco's\
+          \      *\n* Technical Advisory Center. Any use or disclosure, in whole or\
+          \ in part, *\n* of the IOSv Software or Documentation to any third party\
+          \ for any       *\n* purposes is expressly prohibited except as otherwise\
+          \ authorized by     *\n* Cisco in writing.                             \
+          \                         *\n**************************************************************************^C\n\
+          banner login ^C\n**************************************************************************\n\
+          * IOSv is strictly limited to use for evaluation, demonstration and IOS\
+          \  *\n* education. IOSv is provided as-is and is not supported by Cisco's\
+          \      *\n* Technical Advisory Center. Any use or disclosure, in whole or\
+          \ in part, *\n* of the IOSv Software or Documentation to any third party\
+          \ for any       *\n* purposes is expressly prohibited except as otherwise\
+          \ authorized by     *\n* Cisco in writing.                             \
+          \                         *\n**************************************************************************^C\n\
+          !\nline con 0\n exec-timeout 0 0\nline aux 0\nline vty 0 4\n exec-timeout\
+          \ 0 0\n login\n transport input none\n!\nno scheduler allocate\n!\nend"
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n0
+    image_definition: null
+    label: R1
+    node_definition: iosv
+    parameters: {}
+    priority: null
+    pyats:
+      username: null
+      password: null
+      enable_password: null
+    ram: null
+    tags: []
+    x: -120
+    y: 240
+    interfaces:
+      - id: i0
+        label: Loopback0
+        mac_address: null
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        mac_address: null
+        type: physical
+        slot: 0
+      - id: i2
+        label: GigabitEthernet0/1
+        mac_address: null
+        type: physical
+        slot: 1
+      - id: i3
+        label: GigabitEthernet0/2
+        mac_address: null
+        type: physical
+        slot: 2
+      - id: i4
+        label: GigabitEthernet0/3
+        mac_address: null
+        type: physical
+        slot: 3
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: |-
+          Building configuration...
+
+          Current configuration : 2676 bytes
+          !
+          ! Last configuration change at 12:59:38 UTC Sat Nov 7 2026
+          !
+          version 15.2
+          service timestamps debug datetime msec
+          service timestamps log datetime msec
+          no service password-encryption
+          service compress-config
+          !
+          hostname SW1
+          !
+          boot-start-marker
+          boot-end-marker
+          !
+          !
+          no logging console
+          !
+          no aaa new-model
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          ip cef
+          no ipv6 cef
+          !
+          !
+          !
+          spanning-tree mode pvst
+          spanning-tree extend system-id
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          interface GigabitEthernet0/0
+           negotiation auto
+          !
+          interface GigabitEthernet0/1
+           negotiation auto
+          !
+          interface GigabitEthernet0/2
+           negotiation auto
+          !
+          interface GigabitEthernet0/3
+           negotiation auto
+          !
+          ip forward-protocol nd
+          !
+          ip http server
+          ip http secure-server
+          !
+          ip ssh server algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+          ip ssh client algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+          !
+          !
+          !
+          !
+          !
+          !
+          control-plane
+          !
+          banner exec ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          banner incoming ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          banner login ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          !
+          line con 0
+           exec-timeout 0 0
+          line aux 0
+          line vty 0 4
+           exec-timeout 0 0
+           login
+          !
+          !
+          end
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n1
+    image_definition: null
+    label: SW1
+    node_definition: iosvl2
+    parameters: {}
+    priority: null
+    pyats:
+      username: null
+      password: null
+      enable_password: null
+    ram: null
+    tags: []
+    x: -120
+    y: 80
+    interfaces:
+      - id: i0
+        label: Loopback0
+        mac_address: null
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        mac_address: null
+        type: physical
+        slot: 0
+      - id: i2
+        label: GigabitEthernet0/1
+        mac_address: null
+        type: physical
+        slot: 1
+      - id: i3
+        label: GigabitEthernet0/2
+        mac_address: null
+        type: physical
+        slot: 2
+      - id: i4
+        label: GigabitEthernet0/3
+        mac_address: null
+        type: physical
+        slot: 3
+  - boot_disk_size: null
+    configuration:
+      - name: user-data
+        content: |-
+          #cloud-config
+          hostname: CA01
+          manage_etc_hosts: True
+          system_info:
+            default_user:
+              name: cisco
+          password: cisco
+          chpasswd: { expire: False }
+          ssh_pwauth: True
+          ssh_authorized_keys:
+            - your-ssh-pubkey-line-goes-here
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n2
+    image_definition: null
+    label: CA01
+    node_definition: ubuntu
+    parameters: {}
+    priority: null
+    pyats:
+      username: null
+      password: null
+      enable_password: null
+    ram: null
+    tags: []
+    x: -320
+    y: 240
+    interfaces:
+      - id: i0
+        label: ens2
+        mac_address: null
+        type: physical
+        slot: 0
+  - boot_disk_size: null
+    configuration:
+      - name: user-data
+        content: |-
+          #cloud-config
+          hostname: SRV01
+          manage_etc_hosts: True
+          system_info:
+            default_user:
+              name: cisco
+          password: cisco
+          chpasswd: { expire: False }
+          ssh_pwauth: True
+          ssh_authorized_keys:
+            - your-ssh-pubkey-line-goes-here
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n3
+    image_definition: null
+    label: SRV01
+    node_definition: ubuntu
+    parameters: {}
+    priority: null
+    pyats:
+      username: null
+      password: null
+      enable_password: null
+    ram: null
+    tags: []
+    x: 80
+    y: 240
+    interfaces:
+      - id: i0
+        label: ens2
+        mac_address: null
+        type: physical
+        slot: 0
+links:
+  - id: l0
+    n1: n2
+    n2: n1
+    i1: i0
+    i2: i1
+    conditioning: {}
+    label: CA01-ens2<->SW1-GigabitEthernet0/0
+  - id: l1
+    n1: n0
+    n2: n1
+    i1: i1
+    i2: i2
+    conditioning: {}
+    label: R1-GigabitEthernet0/0<->SW1-GigabitEthernet0/1
+  - id: l2
+    n1: n3
+    n2: n1
+    i1: i0
+    i2: i3
+    conditioning: {}
+    label: SRV01-ens2<->SW1-GigabitEthernet0/2
+lab:
+  description: ''
+  notes: ''
+  title: 'Certificates Lab: Private CA, CSR Signing and Trust'
+  node_staging:
+    enabled: false
+    start_remaining: true
+    abort_on_failure: false
+  version: 0.3.1
